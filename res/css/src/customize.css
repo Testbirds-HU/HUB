@@ -15,10 +15,10 @@
 .navbar {
     background-color: #1f777a;
 }
-.navbar a {
+a {
     color: white !important;
+    text-decoration: none !important
 }
-
 
 /* Header customization */
 .introheader .container-fluid {
@@ -26,6 +26,9 @@
 }
 
 /* CONTENT ROW CUSTOMIZATIONS */
+.card {
+    color: white;
+}
 .subintro .shadebg {
     background: linear-gradient(to left, rgba(48, 63 ,159 , 1) 10%, rgba(48, 63 ,159 , .1) 75%)
 }

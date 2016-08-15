@@ -1,0 +1,8 @@
+[
+    "ca": {
+        apoint = "example.com",
+        atarget = "_blank",
+        cardtitle = "Test card title",
+        cardcontent = "Test card content here!"
+    }
+]
