@@ -21,6 +21,30 @@
     font-size: 16px
 }
 
+.card .comment {
+    opacity: .7;
+    margin-top: 10px;
+    text-decoration-style: wavy
+}
+
+.card {
+    text-align: left;
+    min-height: 230px;
+    margin-top: 10px;
+}
+
+.navbar-nav .container {
+    height: 100% !important;
+}
+
+.navbar-nav {
+    height: 50px;
+}
 
 
 
+
+.bumpd {
+    margin-top: 8px;
+    margin-left: 15px
+}

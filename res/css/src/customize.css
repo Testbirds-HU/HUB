@@ -32,8 +32,11 @@ a {
 .subintro .shadebg {
     background: linear-gradient(to left, rgba(48, 63 ,159 , 1) 10%, rgba(48, 63 ,159 , .1) 75%)
 }
-.block-content {
-    background-color: #3F51B5
+.card.open {
+    background-color: #1f777a;
+}
+.card.restricted {
+    background-color: #7A1F1F;
 }
 .block-content .text-content {
     color: white;
@@ -42,4 +45,7 @@ a {
 }
 .contentwrapper .img-content .imgholder {
     background-image: url("/res/img/src/placeholdernormal.png");
+}
+.navbar-left {
+    color: white;
 }
