@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TemplateBuilder</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" type="text/css" href="/res/css/dist/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/res/css/src/critical.css">
+    <link rel="stylesheet" type="text/css" href="/res/css/src/customize.css">
+    <link rel="stylesheet" type="text/css" href="/res/css/src/main.css">
+    <script src="/res/js/dist/jquery.min.js"></script>
+    <script src="/res/js/dist/instantclick.min.js"></script>
+    <script src="/res/js/dist/bootstrap.min.js"></script>
+    <script src="/res/js/dist/mustache.min.js"></script>
+</head>
+
+<body>
+    <div class="pwrap">
+        <!-- Colors: https://www.materialpalette.com/indigo/orange -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header"> <a class="navbar-brand" href="">Testbirds internal</a> </div>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="">Icon</a></li>
+                    <li><a href="">Icon</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="">Page 1</a></li>
+                    <li><a href="">Page 2</a></li>
+                    <li><a href="">Page 3</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid introholder">
+            <div class="introheader vertcenter fixedbg fixedbg-notile">
+                <div class="container-fluid">
+                    <div class="container">
+                        <div class="row font-header">
+                            <h1>
+                            Welcome to Testbirds' internal navigation site!
+                        </h1>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contentwrapper">
+            <div id="insert-details" class="container fixedbg fixedbg-notile">
+                <!--        
+                <div class="row fixedbg card">
+                    <div class="container-fluid">
+                        <div class="row block-content">
+                            Here goes the card content
+                        </div>
+                    </div>
+                </div>
+--></div>
+        </div>
+    </div>
+    <script data-no-instant>
+        InstantClick.on('change', function (isInitialLoad) {
+            console.log('Instantclick changed page');
+            if (isInitialLoad == false) {
+                console.log('This is not initial load');
+                // Do things that are required before each non-initial load
+            };
+            console.log("Instantclick load done");
+            $.getJSON('/res/js/details.json', function (data) {
+                // run the rendering
+                $('#insert-details').Mustache.render('Hello, my name is {{name}} and I am {{age}} years old. {{#features}} I have {{hairColor}} hair and {{eyeColor}} eyes.{{/features}}', myObj);
+                // PURE tries to match class with the JSON property and replace the node value with the value of the JSON property
+            });
+        });
+        InstantClick.init();
+        $(document).ready(function () {
+            console.log('This is an initial load');
+            $.ajaxSetup({
+                cache: true
+            });
+            $('head').append('<link rel="stylesheet" href="/res/css/dist/main.min.css" type="text/css">');
+            $.getScript("/res/js/dist/main.min.js", function () {});
+            console.log('Initial load done');
+        });
+    </script>
+</body>
+
+</html>

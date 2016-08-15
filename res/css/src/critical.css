@@ -1,0 +1,98 @@
+.vertcenter {
+    display: flex;
+    align-items: center;
+}
+
+.horizcenter {
+    display: flex;
+    justify-content: center;
+}
+
+.introheader {
+    min-height: 400px;
+    margin-top: 50px;
+}
+
+.fixedbg {
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.staticbg {
+    background-blend-mode: overlay;
+    background-attachment: initial;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.fixedbg-notile,
+.staticbg-notile {
+    background-size: auto;
+    background-repeat: repeat;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    border-radius: 0;
+    outline: none;
+    border: 0 black solid;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .6);
+    height: 50px;
+}
+
+.font-header {
+    text-align: center;
+    color: white;
+}
+
+.font-header p {
+    font-size: 18px;
+}
+
+.introholder {
+    padding: 0;
+}
+
+.introheader .container-fluid {
+    width: 100%;
+}
+
+.block-content {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.contentwrapper .block-content {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+body {
+    z-index: 0;
+}
+
+.col-md-12 .text-content,
+.col-xs-12 .text-content,
+.col-lg-12 .text-content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.shadebg .text-content {
+    max-width: 400px
+}
+
+.img-content .text-content {
+    height: 100%;
+}

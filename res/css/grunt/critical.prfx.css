@@ -1,0 +1,43 @@
+/* Site width */
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1200px !important; /* Max: 1200px */
+    }
+}
+
+/* SITE BACKGROUND */
+/* You can split this to set different backgrounds for the header and the content */
+.introheader, .contentwrapper > .container-fluid {
+    background-image: url("/res/img/src/philomena.jpg");
+}
+
+/* MENU COLORS */
+.navbar {
+    background-color: #1f777a;
+}
+.navbar a {
+    color: white !important;
+}
+
+
+/* Header customization */
+.introheader .container-fluid {
+    background: #82b999;
+}
+
+/* CONTENT ROW CUSTOMIZATIONS */
+.subintro .shadebg {
+    background: -webkit-linear-gradient(right, rgba(48, 63 ,159 , 1) 10%, rgba(48, 63 ,159 , .1) 75%);
+    background: linear-gradient(to left, rgba(48, 63 ,159 , 1) 10%, rgba(48, 63 ,159 , .1) 75%)
+}
+.block-content {
+    background-color: #3F51B5
+}
+.block-content .text-content {
+    color: white;
+    font-size: 16px;
+    text-align: justify;
+}
+.contentwrapper .img-content .imgholder {
+    background-image: url("/res/img/src/placeholdernormal.png");
+}
