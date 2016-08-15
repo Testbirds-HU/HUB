@@ -1,30 +1,11 @@
-//var cards = {
-//    apoint: 'example.com'
-//    , atarget: '_blank'
-//    , cardtitle: 'Test card title'
-//    , cardcontent: 'Test card content here!'
-//};
-//$.Mustache.load('/res/html/src/card.htm').done(function () {
-//    $('#insert-details').mustache('print-card', cards, {
-//        method: 'html'
-//    });
-//});
-var cards = {
-        "cards": [
-            {
-                "apoint": "//example.com",
-                "atarget": "_blank",
-                "cardtitle": "Test Card Title",
-                "cardcontent": "Test card content would kindly go here please :D"
-            },
-            {
-                "apoint": "//example.com",
-                "atarget": "_blank",
-                "cardtitle": "Test Card Title",
-                "cardcontent": "Test card content would kindly go here please :D"
-            }
-          ]
-    }
+function readJSON(file) {
+    var request = new XMLHttpRequest();
+    request.open('GET', file, false);
+    request.send(null);
+    if (request.status == 200)
+        return request.responseText;
+};
+var cards = JSON.parse(readJSON('/res/js/details.json'));
 
 $.Mustache.load('/res/html/src/card.htm').done(function () {
     $('#insert-details').mustache('print-card', cards, {
