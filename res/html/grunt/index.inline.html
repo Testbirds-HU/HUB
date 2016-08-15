@@ -24,11 +24,12 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header"> <a class="navbar-brand" href="">Testbirds internal</a> </div>
-                <ul class="nav navbar-nav navbar-left">
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <input type="checkbox" class="js-switch" checked />
-                </ul>
+                <div class="nav navbar-nav navbar-left">
+                    <div class="container vertcenter">
+                        <input type="checkbox" class="js-switch vertcenter">
+                        <p class="bumpd">Show/Hide restricted cards</p>
+                    </div>
+                </div>
             </div>
         </nav>
         <div class="container-fluid introholder">
@@ -67,6 +68,28 @@
                 // Do things that are required before each non-initial load
             };
             $.getScript("/res/js/src/load-cards.js", function () {});
+            $.getScript("/res/js/dist/switchery.min.js", function () {
+                var elem = document.querySelector('.js-switch');
+                var init = new Switchery(elem, {
+                    color             : '#7A1F1F',
+                    secondaryColor    : '#82B99A',
+                    jackColor         : '#fff',
+                    jackSecondaryColor: null,
+                    className         : 'switchery',
+                    disabled          : false,
+                    disabledOpacity   : 0.5,
+                    speed             : '0.4s',
+                    size              : 'default'
+                });
+                var changeCheckbox = document.querySelector('.js-switch');
+                changeCheckbox.onchange = function() {
+                    if (changeCheckbox.checked) {
+                        $('.restricted').removeClass('hidden');
+                    } else {
+                        $('.restricted').addClass('hidden');
+                    };
+                };
+            });
             console.log("Instantclick load done");            
         });
         InstantClick.init();
@@ -76,9 +99,8 @@
                 cache: true
             });
             $('head').append('<link rel="stylesheet" href="/res/css/dist/main.min.css" type="text/css">');
-            $('head').append('<link rel="stylesheet" href="/bower_components/switchery/dist/switchery.min.css" type="text/css">');
+            $('head').append('<link rel="stylesheet" href="/res/css/dist/switchery.min.css" type="text/css">');
             $.getScript("/res/js/dist/main.min.js", function () {});
-            $.getScript("/res/js/dist/switchery.min.js", function () {});
             $.getScript("/res/js/src/load-cards.js", function () {});
             console.log('Initial load done');
         });

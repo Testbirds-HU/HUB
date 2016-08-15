@@ -47,3 +47,6 @@ a {
 .contentwrapper .img-content .imgholder {
     background-image: url("/res/img/src/placeholdernormal.png");
 }
+.navbar-left {
+    color: white;
+}
